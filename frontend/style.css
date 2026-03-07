@@ -1,0 +1,666 @@
+/* =============================================
+   COVER PAGE — REBECA CASTILHO
+   Style Sheet
+   ============================================= */
+
+/* =============================================
+   1. RESET & BASE
+   ============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  color: #202124;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* =============================================
+   2. PAGE SYSTEM — show/hide pages
+   ============================================= */
+.page {
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* =============================================
+   3. HOMEPAGE — NAV
+   ============================================= */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.nav-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a73e8;
+  font-weight: 500;
+  background: #e8f0fe;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  font-size: 13px;
+  color: #5f6368;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.nav-link:hover {
+  background: #f1f3f4;
+}
+
+.nav-link.cv {
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+/* =============================================
+   4. HOMEPAGE — HERO
+   ============================================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 120px;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 8px;
+}
+
+.badge-line1 {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.badge-line2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bdc1c6;
+  font-weight: 400;
+}
+
+/* =============================================
+   5. GOOGLE LOGO
+   ============================================= */
+.logo {
+  font-size: 92px;
+  font-family: 'Google Sans', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 16px;
+  user-select: none;
+}
+
+.logo span:nth-child(1) { color: #4285f4; }
+.logo span:nth-child(2) { color: #ea4335; }
+.logo span:nth-child(3) { color: #fbbc05; }
+.logo span:nth-child(4) { color: #4285f4; }
+.logo span:nth-child(5) { color: #34a853; }
+.logo span:nth-child(6) { color: #ea4335; }
+
+.logo-small {
+  font-size: 26px;
+  font-family: 'Google Sans', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.logo-small span:nth-child(1) { color: #4285f4; }
+.logo-small span:nth-child(2) { color: #ea4335; }
+.logo-small span:nth-child(3) { color: #fbbc05; }
+.logo-small span:nth-child(4) { color: #4285f4; }
+.logo-small span:nth-child(5) { color: #34a853; }
+.logo-small span:nth-child(6) { color: #ea4335; }
+
+/* =============================================
+   6. HOMEPAGE — SEARCH BAR
+   ============================================= */
+.subtitle {
+  font-size: 13px;
+  color: #5f6368;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+.search-wrap {
+  position: relative;
+  width: 580px;
+}
+
+.search-bar {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  gap: 12px;
+  background: white;
+  box-shadow: 0 1px 6px rgba(32,33,36,.12);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+  box-shadow: 0 2px 12px rgba(32,33,36,.2);
+  border-color: rgba(223,225,229,0);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  fill: #9aa0a6;
+  flex-shrink: 0;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #202124;
+  flex: 1;
+  background: transparent;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.search-bar input::placeholder {
+  color: #9aa0a6;
+}
+
+/* =============================================
+   7. HOMEPAGE — HINT & BUTTONS
+   ============================================= */
+.hint {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #9aa0a6;
+  font-style: italic;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn {
+  background: #f8f9fa;
+  border: 1px solid #dadce0;
+  color: #3c4043;
+  padding: 9px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+  border-color: #c6c6c6;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+
+.btn.gemini {
+  background: #1a73e8;
+  border-color: #1a73e8;
+  color: white;
+  font-weight: 500;
+}
+
+.btn.gemini:hover {
+  background: #1557b0;
+  border-color: #1557b0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+
+/* =============================================
+   8. HOMEPAGE — FOOTER
+   ============================================= */
+.footer {
+  background: #f2f2f2;
+  border-top: 1px solid #e0e0e0;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left span,
+.footer-right .footer-link {
+  font-size: 13px;
+  color: #70757a;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   9. RESULTS PAGE — NAV
+   ============================================= */
+.results-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 100;
+}
+
+.results-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.results-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.results-search-bar {
+  flex: 1;
+  max-width: 600px;
+  height: 44px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 10px;
+  background: white;
+  box-shadow: 0 1px 6px rgba(32,33,36,.1);
+  transition: box-shadow 0.2s;
+}
+
+.results-search-bar:hover,
+.results-search-bar:focus-within {
+  box-shadow: 0 2px 8px rgba(32,33,36,.18);
+}
+
+.results-search-bar input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #202124;
+  flex: 1;
+  background: transparent;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* =============================================
+   10. RESULTS PAGE — TABS
+   ============================================= */
+.results-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 20px 0 160px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  font-size: 13px;
+  color: #5f6368;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: #1a73e8;
+  background: #f8f9fa;
+}
+
+.tab.active {
+  color: #1a73e8;
+  border-bottom-color: #1a73e8;
+  font-weight: 500;
+}
+
+/* =============================================
+   11. RESULTS PAGE — BODY & LAYOUT
+   ============================================= */
+.results-body {
+  padding: 20px 20px 40px 160px;
+  max-width: 1200px;
+}
+
+.results-main {
+  max-width: 600px;
+}
+
+/* =============================================
+   12. AI OVERVIEW BOX
+   ============================================= */
+.ai-overview {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    #4285f4,
+    #ea4335,
+    #fbbc05,
+    #34a853
+  ) 1;
+  border-image-slice: 1;
+  border-radius: 0;
+  /* Workaround for border-image + border-radius */
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853) border-box;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  border-top-width: 3px;
+}
+
+.ai-overview-header {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ai-overview-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #202124;
+}
+
+/* Loading shimmer */
+.ai-loading {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shimmer-line {
+  height: 14px;
+  border-radius: 7px;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer-line.wide   { width: 100%; }
+.shimmer-line.medium { width: 80%; }
+.shimmer-line.narrow { width: 60%; }
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Answer */
+.ai-answer {
+  padding: 16px 18px 20px;
+}
+
+.ai-answer p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #202124;
+}
+
+.ai-source {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.ai-source-label {
+  font-size: 12px;
+  color: #70757a;
+  font-style: italic;
+}
+
+/* Error */
+.ai-error {
+  padding: 16px 18px;
+}
+
+.ai-error p {
+  font-size: 14px;
+  color: #ea4335;
+}
+
+/* =============================================
+   13. RESULT CARDS
+   ============================================= */
+.result-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.result-card {
+  cursor: pointer;
+}
+
+.result-url {
+  font-size: 13px;
+  color: #202124;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.result-url::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #e8f0fe;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.result-title {
+  font-size: 20px;
+  color: #1a0dab;
+  font-weight: 400;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  transition: text-decoration 0.1s;
+}
+
+.result-card:hover .result-title {
+  text-decoration: underline;
+}
+
+.result-snippet {
+  font-size: 14px;
+  color: #4d5156;
+  line-height: 1.6;
+}
+
+/* =============================================
+   14. SECTION PAGES
+   ============================================= */
+.section-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 100;
+}
+
+.section-body {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.section-body h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+.section-body .section-meta {
+  font-size: 13px;
+  color: #70757a;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section-body h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #202124;
+  margin: 28px 0 12px;
+}
+
+.section-body p {
+  font-size: 15px;
+  color: #4d5156;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.section-accent {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+/* =============================================
+   15. AUTOCOMPLETE DROPDOWN
+   ============================================= */
+.autocomplete-dropdown {
+  display: none;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #dfe1e5;
+  border-top: none;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 12px rgba(32,33,36,.15);
+  overflow: hidden;
+  z-index: 200;
+}
+
+.autocomplete-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.focused {
+  background: #f8f9fa;
+}
+
+.suggest-icon {
+  width: 18px;
+  height: 18px;
+  fill: #9aa0a6;
+  flex-shrink: 0;
+}
+
+.suggest-text {
+  font-size: 14px;
+  color: #202124;
+}
+
+.suggest-text strong {
+  font-weight: 600;
+  color: #202124;
+}
+
+.autocomplete-empty {
+  padding: 12px 18px;
+  font-size: 13px;
+  color: #9aa0a6;
+  font-style: italic;
+}
+
+/* When search bar has active dropdown — square bottom corners */
+.search-bar:focus-within {
+  border-radius: 24px 24px 0 0;
+}

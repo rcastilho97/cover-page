@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cover Page — Rebeca Castilho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== -->
+  <!-- HOMEPAGE              -->
+  <!-- ===================== -->
+  <div id="page-home" class="page active">
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-tag">Cover Page — Rebeca Castilho</div>
+      <div class="nav-right">
+        <a class="nav-link" onclick="showSection('about')">About</a>
+        <a class="nav-link" onclick="showSection('contact')">Contact</a>
+        <a class="nav-link" href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
+        <a class="nav-link" href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+        <a class="nav-link cv" href="YOUR_CV_URL" target="_blank">CV</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <main class="hero">
+
+      <!-- Badge -->
+      <div class="badge">
+        <span class="badge-line1">Software Development Apprenticeship</span>
+        <span class="badge-line2">Engineering · Dublin, Ireland</span>
+      </div>
+
+      <!-- Google Logo -->
+      <div class="logo">
+        <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+      </div>
+
+      <!-- Subtitle -->
+      <p class="subtitle">Search Rebeca Castilho Database — Interactive Cover Letter</p>
+
+      <!-- Search Bar -->
+      <div class="search-wrap">
+        <div class="search-bar" id="search-bar-home">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          <input
+            type="text"
+            id="search-input-home"
+            autocomplete="off"
+          > 
+        </div>
+        <div class="autocomplete-dropdown" id="autocomplete-home"></div>
+      </div>
+
+      <!-- Hint -->
+      <p class="hint">Try asking anything about Rebeca — Powered by Gemini AI</p>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="btn" onclick="submitSearch()">RC Search</button>
+        <button class="btn gemini" onclick="submitSearch()">Ask Gemini</button>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <span>Dublin, Ireland</span>
+      </div>
+      <div class="footer-right">
+        <a class="footer-link" onclick="showSection('about')">About</a>
+        <a class="footer-link" onclick="showSection('contact')">Contact</a>
+        <a class="footer-link" href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
+        <a class="footer-link" href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ===================== -->
+  <!-- RESULTS PAGE          -->
+  <!-- ===================== -->
+  <div id="page-results" class="page">
+
+    <!-- Results Nav -->
+    <nav class="results-nav">
+      <div class="results-nav-left">
+        <div class="logo-small" onclick="showPage('home')">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        </div>
+        <div class="results-search-bar" id="search-bar-results">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          <input
+            type="text"
+            id="search-input-results"
+            autocomplete="off"
+          >
+        </div>
+        <div class="autocomplete-dropdown" id="autocomplete-results"></div>
+      </div>
+      <div class="results-nav-right">
+        <a class="nav-link" onclick="showSection('about')">About</a>
+        <a class="nav-link" onclick="showSection('contact')">Contact</a>
+        <a class="nav-link cv" href="YOUR_CV_URL" target="_blank">CV</a>
+      </div>
+    </nav>
+
+    <!-- Results Tabs -->
+    <div class="results-tabs">
+      <div class="tab active">All</div>
+      <div class="tab">Experience</div>
+      <div class="tab">Projects</div>
+      <div class="tab">Skills</div>
+      <div class="tab">Contact</div>
+    </div>
+
+    <!-- Results Body -->
+    <div class="results-body">
+      <div class="results-main">
+
+        <!-- AI Overview Box -->
+        <div class="ai-overview" id="ai-overview">
+          <div class="ai-overview-header">
+            <div class="ai-overview-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L9.5 9.5H2L7.5 14L5.5 21.5L12 17L18.5 21.5L16.5 14L22 9.5H14.5L12 2Z" fill="#4285f4"/>
+              </svg>
+              <span>AI Overview</span>
+            </div>
+          </div>
+
+          <!-- Loading state -->
+          <div class="ai-loading" id="ai-loading">
+            <div class="shimmer-line wide"></div>
+            <div class="shimmer-line medium"></div>
+            <div class="shimmer-line narrow"></div>
+          </div>
+
+          <!-- Answer state -->
+          <div class="ai-answer" id="ai-answer" style="display:none">
+            <p id="ai-answer-text"></p>
+            <div class="ai-source">
+              <span class="ai-source-label">Rebeca Castilho · Interactive Cover Letter</span>
+            </div>
+          </div>
+
+          <!-- Error state -->
+          <div class="ai-error" id="ai-error" style="display:none">
+            <p id="ai-error-text"></p>
+          </div>
+
+        </div>
+
+        <!-- Result Cards -->
+        <div class="result-cards">
+
+          <div class="result-card" onclick="showSection('about')">
+            <div class="result-url">coverpage.rebeca.dev › about</div>
+            <div class="result-title">About Rebeca Castilho — Background & Story</div>
+            <div class="result-snippet">Creative professional transitioning into software engineering. Five years of film and television production experience, now building full-stack applications with Java, Spring Boot, and Gemini AI.</div>
+          </div>
+
+          <div class="result-card" onclick="showSection('experience')">
+            <div class="result-url">coverpage.rebeca.dev › experience</div>
+            <div class="result-title">Professional Experience — Film, TV & Tech</div>
+            <div class="result-snippet">From post-production coordination to backend API development. A career that spans two industries and demonstrates adaptability, creativity, and technical depth.</div>
+          </div>
+
+          <div class="result-card" onclick="showSection('projects')">
+            <div class="result-url">coverpage.rebeca.dev › projects</div>
+            <div class="result-title">Projects — What Rebeca Has Built</div>
+            <div class="result-snippet">Including this application — a Spring Boot REST API with Gemini AI integration, RAG architecture, and a Google Search-inspired frontend. Built from scratch as a Google apprenticeship application.</div>
+          </div>
+
+          <div class="result-card" onclick="showSection('skills')">
+            <div class="result-url">coverpage.rebeca.dev › skills</div>
+            <div class="result-title">Technical Skills — Languages, Frameworks & Tools</div>
+            <div class="result-snippet">Java, Spring Boot, Python, JavaScript, HTML, CSS, Gemini AI API, REST API design, RAG implementation, Firebase, Git. Self-taught and building continuously.</div>
+          </div>
+
+          <div class="result-card" onclick="showSection('why')">
+            <div class="result-url">coverpage.rebeca.dev › why-google</div>
+            <div class="result-title">Why Google — Rebeca's Case for the Apprenticeship</div>
+            <div class="result-snippet">Three specific, considered reasons why Google's Software Development Apprenticeship is the right next step — and why Rebeca is the right candidate for it.</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- SECTION PAGES         -->
+  <!-- ===================== -->
+  <div id="page-section" class="page">
+    <nav class="section-nav">
+      <div class="logo-small" onclick="showPage('results')">
+        <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+      </div>
+    </nav>
+    <div class="section-body" id="section-body">
+      <!-- Content injected by JavaScript -->
+    </div>
+  </div>
+
+<script src="js/sections.js"></script>
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
