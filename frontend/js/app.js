@@ -19,12 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle direct URL on first load
   const path = window.location.pathname;
   if (path.includes('/results')) {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q') || '';
+    if (query) {
+      document.getElementById('search-input-home').value = query;
+      document.getElementById('search-input-results').value = query;
+    }
     renderPage('results', null, false);
+    history.replaceState({ page: 'results' }, '', `/results${query ? '?q=' + encodeURIComponent(query) : ''}`);
+    if (query) fetchAnswer(query);
   } else if (path.includes('/section/')) {
     const key = path.split('/section/')[1];
     renderPage('section', key, false);
+    history.replaceState({ page: 'section', section: key }, '', `/section/${key}`);
   } else {
     renderPage('home', null, false);
+    history.replaceState({ page: 'home' }, '', '/');
   }
 });
 
@@ -57,7 +67,10 @@ function renderPage(pageName, sectionKey, pushState) {
   // Push to browser history so back button works
   if (pushState) {
     let url = '/';
-    if (pageName === 'results') url = '/results';
+    if (pageName === 'results') {
+      const query = document.getElementById('search-input-results').value.trim();
+      url = '/results' + (query ? '?q=' + encodeURIComponent(query) : '');
+    }
     if (pageName === 'section') url = `/section/${sectionKey}`;
 
     history.pushState(
