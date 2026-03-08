@@ -2,7 +2,7 @@
 // API.JS — All calls to Spring Boot backend
 // =============================================
 
-const API_BASE = 'http://localhost:8080';
+const API_BASE = 'https://cover-page-backend-270502567008.europe-west1.run.app';
 
 async function askGemini(question) {
   try {

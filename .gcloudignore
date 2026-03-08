@@ -1,0 +1,10 @@
+.git
+.gitignore
+**/.DS_Store
+
+frontend/node_modules
+backend/target
+
+.vscode
+.idea
+*.iml

@@ -1,27 +1,28 @@
-# Start from official Java 17 image
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine AS builder
+WORKDIR /workspace
 
-# Set working directory inside container
-WORKDIR /app
+# Copy Maven wrapper + config
+COPY backend/mvnw ./backend/mvnw
+COPY backend/.mvn ./backend/.mvn
+COPY backend/pom.xml ./backend/pom.xml
 
-# Copy Maven wrapper and pom first
-# Docker caches these layers separately
-# so dependencies only re-download when pom.xml changes
-COPY mvnw .
-COPY .mvn .mvn
-COPY pom.xml .
+RUN chmod +x backend/mvnw
 
-# Make mvnw executable
-RUN chmod +x mvnw
-
-# Download dependencies
+WORKDIR /workspace/backend
 RUN ./mvnw dependency:resolve -q
 
-# Copy source code
-COPY src src
+# Copy source
+COPY backend/src ./src
 
-# Build the jar, skip tests
+# Build jar
 RUN ./mvnw package -DskipTests -q
 
-# Run the jar
-CMD ["java", "-jar", "target/backend-0.0.1-SNAPSHOT.jar"]
+# --- Runtime image ---
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+
+COPY --from=builder /workspace/backend/target/*.jar app.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"]
