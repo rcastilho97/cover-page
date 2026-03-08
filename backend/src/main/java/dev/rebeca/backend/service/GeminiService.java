@@ -69,6 +69,9 @@ public class GeminiService {
             } else if (errorString != null && errorString.contains("404")) {
             errorMessage = "I couldn't reach my AI service " +
             "right now. Please try again shortly.";
+            } else if (errorString != null && errorString.contains("503")) {
+            errorMessage = "The AI service is temporarily " +
+            "unavailable. Please try again in a moment.";
             } else {
             errorMessage = "Something went wrong. " +
             "Please try again in a moment.";
