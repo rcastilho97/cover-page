@@ -47,10 +47,21 @@ public class GeminiService {
                     .bodyToMono(Map.class)
                     .block();
 
-            String answer = extractAnswer(response);
+            String rawAnswer = extractAnswer(response);
+
+            // Parse the JSON response from Gemini
+            com.fasterxml.jackson.databind.ObjectMapper mapper =
+                new com.fasterxml.jackson.databind.ObjectMapper();
+            @SuppressWarnings("unchecked")
+            Map<String, Object> parsed = mapper.readValue(rawAnswer, Map.class);
+
+            String answer = (String) parsed.get("answer");
+            @SuppressWarnings("unchecked")
+            List<String> relevantSections = (List<String>) parsed.get("relevantSections");
 
             return AskResponse.builder()
                     .answer(answer)
+                    .relevantSections(relevantSections)
                     .success(true)
                     .build();
 
@@ -86,26 +97,36 @@ public class GeminiService {
 
     private String buildPrompt(String question) {
         return """
-                You are Rebeca, speaking directly to a 
-                Google recruiter reviewing your Software 
-                Engineering Apprenticeship application.
-                                
-                Speak in first person, warmly and 
-                professionally. Answer only using the 
-                information in the document below. If 
-                something isn't covered, say honestly: 
-                "That's not something I've covered here 
-                yet, but I'd love to discuss it in person."
-                                
+                You are a professional search engine presenting
+                information about Rebeca Castilho to a Google
+                recruiter reviewing her Software Engineering
+                Apprenticeship application.
+
+                Speak in third person. Be warm, professional,
+                and concise. Present Rebeca's strengths
+                naturally without sounding like a sales pitch.
+                Answer only using the information in the
+                document below. If something is not covered,
+                say: "This is not covered in Rebeca's current
+                profile, but she would love to discuss it
+                in person."
+
                 Keep answers to 3-5 sentences.
-                                
+
+                You must also choose 3 to 5 sections from
+                this list that are most relevant to the
+                question being asked:
+                about, experience, projects, skills, why, contact
+
+                Respond ONLY with valid JSON in this exact format,
+                no markdown, no code blocks:
+                {"answer": "your answer here", "relevantSections": ["section1", "section2", "section3"]}
+
                 KNOWLEDGE BASE:
                 %s
-                                
+
                 QUESTION:
                 %s
-                                
-                YOUR ANSWER:
                 """.formatted(knowledgeBase.getDocument(), question);
     }
 
