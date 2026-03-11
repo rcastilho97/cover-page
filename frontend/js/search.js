@@ -211,10 +211,48 @@ function submitSearch(inputId) {
 }
 
 // =============================================
+// RESULT CARD DATA
+// Maps section keys to display info
+// =============================================
+const cardData = {
+  about: {
+    url: 'coverpage.rebeca.dev › about',
+    title: 'About Rebeca Castilho — Background & Story',
+    snippet: 'From rural Brazil to Dublin, Ireland. A creative professional transitioning into software engineering with a global mindset shaped by living in four countries.'
+  },
+  experience: {
+    url: 'coverpage.rebeca.dev › experience',
+    title: 'Professional Experience — Film, TV & Tech',
+    snippet: 'From corporate events at Vodafone to film production internships at Killer Films and Cinetic Media. A career that spans two industries and demonstrates adaptability, creativity, and technical depth.'
+  },
+  projects: {
+    url: 'coverpage.rebeca.dev › projects',
+    title: 'Projects — What Rebeca Has Built',
+    snippet: 'CoverPage, Filmoji, and Flower Power — full-stack applications featuring AI integration, vector databases, RAG architecture, and Google Cloud deployment. Built from scratch.'
+  },
+  skills: {
+    url: 'coverpage.rebeca.dev › skills',
+    title: 'Technical Skills — Languages, Frameworks & Tools',
+    snippet: 'Java, JavaScript (ES6+), Spring Boot, SQL, Gemini AI, RAG, Firebase, Google Cloud Run, Docker, Git. Self-taught and building continuously.'
+  },
+  why: {
+    url: 'coverpage.rebeca.dev › why-google',
+    title: 'Why Google — Rebeca\'s Case for the Apprenticeship',
+    snippet: 'Values alignment, world-class structured learning, and a personal dream from rural Brazil. Three specific reasons why Google\'s apprenticeship is the right next step.'
+  },
+  contact: {
+    url: 'coverpage.rebeca.dev › contact',
+    title: 'Contact Rebeca Castilho',
+    snippet: 'Get in touch via email, GitHub, or LinkedIn. Based in Dublin, Ireland.'
+  }
+};
+
+// =============================================
 // FETCH ANSWER FROM BACKEND
 // =============================================
 async function fetchAnswer(question) {
   setAIState('loading');
+  renderResultCards([]);
 
   const response = await askGemini(question);
 
@@ -222,11 +260,36 @@ async function fetchAnswer(question) {
     document.getElementById('ai-answer-text')
       .textContent = response.answer;
     setAIState('answer');
+    renderResultCards(response.relevantSections || []);
   } else {
     document.getElementById('ai-error-text')
       .textContent = response.error;
     setAIState('error');
+    renderResultCards(['about', 'experience', 'projects', 'skills', 'why']);
   }
+}
+
+// =============================================
+// RENDER DYNAMIC RESULT CARDS
+// =============================================
+function renderResultCards(sectionKeys) {
+  const container = document.getElementById('result-cards');
+  container.innerHTML = '';
+
+  sectionKeys.forEach(function(key) {
+    const card = cardData[key];
+    if (!card) return;
+
+    const div = document.createElement('div');
+    div.className = 'result-card';
+    div.onclick = function() { showSection(key); };
+    div.innerHTML = `
+      <div class="result-url">${card.url}</div>
+      <div class="result-title">${card.title}</div>
+      <div class="result-snippet">${card.snippet}</div>
+    `;
+    container.appendChild(div);
+  });
 }
 
 // =============================================

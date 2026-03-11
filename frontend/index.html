@@ -21,8 +21,8 @@
       <div class="nav-right">
         <a class="nav-link" onclick="showSection('about')">About</a>
         <a class="nav-link" onclick="showSection('contact')">Contact</a>
-        <a class="nav-link" href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
-        <a class="nav-link" href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+        <a class="nav-link" href="https://github.com/rcastilho97" target="_blank">GitHub</a>
+        <a class="nav-link" href="https://www.linkedin.com/in/rebeca-castilho/" target="_blank">LinkedIn</a>
         <a class="nav-link cv" href="YOUR_CV_URL" target="_blank">CV</a>
       </div>
     </nav>
@@ -78,8 +78,8 @@
       <div class="footer-right">
         <a class="footer-link" onclick="showSection('about')">About</a>
         <a class="footer-link" onclick="showSection('contact')">Contact</a>
-        <a class="footer-link" href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
-        <a class="footer-link" href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/rcastilho97" target="_blank">GitHub</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/rebeca-castilho/" target="_blank">LinkedIn</a>
       </div>
     </footer>
 
@@ -161,40 +161,8 @@
 
         </div>
 
-        <!-- Result Cards -->
-        <div class="result-cards">
-
-          <div class="result-card" onclick="showSection('about')">
-            <div class="result-url">coverpage.rebeca.dev › about</div>
-            <div class="result-title">About Rebeca Castilho — Background & Story</div>
-            <div class="result-snippet">Creative professional transitioning into software engineering. Five years of film and television production experience, now building full-stack applications with Java, Spring Boot, and Gemini AI.</div>
-          </div>
-
-          <div class="result-card" onclick="showSection('experience')">
-            <div class="result-url">coverpage.rebeca.dev › experience</div>
-            <div class="result-title">Professional Experience — Film, TV & Tech</div>
-            <div class="result-snippet">From post-production coordination to backend API development. A career that spans two industries and demonstrates adaptability, creativity, and technical depth.</div>
-          </div>
-
-          <div class="result-card" onclick="showSection('projects')">
-            <div class="result-url">coverpage.rebeca.dev › projects</div>
-            <div class="result-title">Projects — What Rebeca Has Built</div>
-            <div class="result-snippet">Including this application — a Spring Boot REST API with Gemini AI integration, RAG architecture, and a Google Search-inspired frontend. Built from scratch as a Google apprenticeship application.</div>
-          </div>
-
-          <div class="result-card" onclick="showSection('skills')">
-            <div class="result-url">coverpage.rebeca.dev › skills</div>
-            <div class="result-title">Technical Skills — Languages, Frameworks & Tools</div>
-            <div class="result-snippet">Java, Spring Boot, Python, JavaScript, HTML, CSS, Gemini AI API, REST API design, RAG implementation, Firebase, Git. Self-taught and building continuously.</div>
-          </div>
-
-          <div class="result-card" onclick="showSection('why')">
-            <div class="result-url">coverpage.rebeca.dev › why-google</div>
-            <div class="result-title">Why Google — Rebeca's Case for the Apprenticeship</div>
-            <div class="result-snippet">Three specific, considered reasons why Google's Software Development Apprenticeship is the right next step — and why Rebeca is the right candidate for it.</div>
-          </div>
-
-        </div>
+        <!-- Result Cards (dynamically rendered by search.js) -->
+        <div class="result-cards" id="result-cards"></div>
 
       </div>
     </div>

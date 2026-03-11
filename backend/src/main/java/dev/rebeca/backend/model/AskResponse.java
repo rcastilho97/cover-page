@@ -1,5 +1,7 @@
 package dev.rebeca.backend.model;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,4 +15,5 @@ public class AskResponse {
     private String answer;
     private boolean success;
     private String error;
+    private List<String> relevantSections;
 }
