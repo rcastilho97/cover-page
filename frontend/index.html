@@ -148,10 +148,19 @@
 
           <!-- Answer state -->
           <div class="ai-answer" id="ai-answer" style="display:none">
-            <p id="ai-answer-text"></p>
-            <div class="ai-source">
-              <span class="ai-source-label">Rebeca Castilho · Interactive Cover Letter</span>
+            <div class="ai-answer-content" id="ai-answer-content">
+              <div id="ai-answer-text"></div>
+              <div class="ai-answer-fade" id="ai-answer-fade"></div>
             </div>
+            <button class="ai-toggle" id="ai-toggle" onclick="toggleAIOverview()">
+              <span id="ai-toggle-text">Show more</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="ai-source" id="ai-source" style="display:none">
+            <span class="ai-source-label">Rebeca Castilho · Interactive Cover Letter</span>
           </div>
 
           <!-- Error state -->

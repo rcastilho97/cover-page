@@ -56,11 +56,8 @@ function renderPage(pageName, sectionKey, pushState) {
   if (pageName === 'section' && sectionKey) {
     const section = sections[sectionKey];
     if (section) {
-      document.getElementById('section-body').innerHTML = `
-        <h1>${section.title}</h1>
-        <p class="section-meta">${section.meta}</p>
-        ${section.content}
-      `;
+      document.getElementById('section-body').innerHTML = section.content;
+      document.title = section.title + ' — CoverPage';
     }
   }
 
@@ -96,11 +93,8 @@ function handleRoute(state) {
   if (state.page === 'section' && state.section) {
     const section = sections[state.section];
     if (section) {
-      document.getElementById('section-body').innerHTML = `
-        <h1>${section.title}</h1>
-        <p class="section-meta">${section.meta}</p>
-        ${section.content}
-      `;
+      document.getElementById('section-body').innerHTML = section.content;
+      document.title = section.title + ' — CoverPage';
     }
   }
 

@@ -111,12 +111,28 @@ public class GeminiService {
                 profile, but she would love to discuss it
                 in person."
 
-                Keep answers to 3-5 sentences.
+                Keep answers concise but informative.
+                Format your answer using simple HTML for
+                readability:
+                - Use <strong> to bold key terms or names
+                - Use <ul> and <li> for lists of skills,
+                  experiences, or key points
+                - Use short paragraphs with <p> tags
+                - Keep it scannable like a Google AI Overview
 
-                You must also choose 3 to 5 sections from
+                You must choose exactly 5 sections from
                 this list that are most relevant to the
                 question being asked:
-                about, experience, projects, skills, why, contact
+                about, experience-film, experience-screenwriting,
+                experience-vodafone, experience-story-analyst,
+                experience-internships, experience-courses,
+                projects-coverpage, projects-filmoji,
+                projects-flowerpower, skills,
+                education-maynooth, education-fordham,
+                education-sorbonne, why-google,
+                why-apprenticeship, why-tech, collaboration,
+                awards, personal, interests, looking-ahead,
+                contact
 
                 Respond ONLY with valid JSON in this exact format,
                 no markdown, no code blocks:
