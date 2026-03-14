@@ -295,7 +295,7 @@ const cardData = {
   'education-maynooth': {
     url: 'coverpage.rebeca.dev › education › maynooth',
     title: 'Maynooth University — HDip Software Development',
-    snippet: 'Higher Diploma in Software Development (1.1 Honours projected). 94.5% in Java bootcamp. Equivalent to a 4-year CS degree.',
+    snippet: 'Higher Diploma in Software Development (1.1 Honours projected). 96.79% in Java bootcamp. Equivalent to a 4-year CS degree.',
     iconClass: 'icon-education',
     icon: '<svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>'
   },

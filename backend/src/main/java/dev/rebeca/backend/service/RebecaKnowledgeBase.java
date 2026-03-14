@@ -27,7 +27,7 @@ public class RebecaKnowledgeBase {
                   Maynooth University — Higher Diploma in Software Development (Sept 2025 – Sept 2026). Projected grade: 1.1 Honours. Modules include:
   Mobile App Dev, Databases, Computer Systems, Algorithms and Data Structures 1 and 2, Software Testing, Object-Oriented Programming, Software Project, Web
    Information Processing, Work Placement Preparation. I participated in a three-week intensive Java programming bootcamp at the start of the program that
-  covered first-year undergraduate CS material. I achieved a final grade of 94.5% out of 100% for that module. The bootcamp is one of my favorite parts of
+  covered first-year undergraduate CS material. I achieved a final grade of 96.79% out of 100% for that module. The bootcamp is one of my favorite parts of
   the program because it was structured learning with lectures in the morning and labs in the afternoon to apply the knowledge — exactly the format the
   first year of the Google apprenticeship ICT learning environment will follow. I am involved in the Women in STEM society, the Tennis Society, and the
   LGBTQ+ society at Maynooth. Lectures end in May 2026, with final exams and official graduation in September 2026.
@@ -88,15 +88,18 @@ public class RebecaKnowledgeBase {
                   Killer Films — Development Intern (Aug – Dec 2018). I reviewed 30+ experimental screenplays, pilots, and novels. I participated in
   scheduling and budgeting meetings with indie producer Christine Vachon. I prepared comprehensive pitch decks.
 
-                  Get Go Coffee — Lead Barista (Sept 2024 – Sept 2025). I developed strong interpersonal and client-facing skills. I worked collaboratively
+                  Go Get Coffee — Lead Barista (Sept 2024 – Sept 2025). I developed strong interpersonal and client-facing skills. I worked collaboratively
    in a fast-paced team environment. I adapted quickly to new systems and challenges while maintaining consistency under pressure.
 
                   MY TECHNICAL SKILLS
                   Languages: Java, JavaScript (ES6+), HTML5, CSS3, SQL.
-                  AI and Data: Gemini AI, RAG (Retrieval-Augmented Generation), Prompt Engineering, JSON.
-                  Technical Systems: RESTful APIs, CORS Configuration, Secret Management, CRUD Operations.
-                  Cloud and Tools: Google Cloud Run, Firebase, Git, Google Cloud Platform (GCP), Docker, Supabase.
+                  Frameworks and Tools: Spring Boot, RESTful APIs, React, Git, Docker, Jira.
+                  AI and Data: Gemini AI, RAG (Retrieval-Augmented Generation), Prompt Engineering, JSON, PostgreSQL, pgvector (Vector Embeddings).
+                  Cloud: Google Cloud Platform (Firebase, Cloud Run, Cloud Build, Secret Manager), Supabase.
+                  Testing and Quality: TestNG (Java Software Testing), Selenium (Automation), Unit Testing.
+                  Practices: Agile/Scrum, CI/CD.
                   Soft Skills: Creative Problem-Solving, Cross-functional Collaboration, Technical Storytelling.
+                  Spoken Languages: English (Fluent), Portuguese (Native), French (Conversational), Spanish (Conversational).
 
                   MY PROJECTS
                   CoverPage (Solo Project — built for the Google apprenticeship application): An interactive cover letter designed as a Google Search
@@ -115,7 +118,7 @@ public class RebecaKnowledgeBase {
   group discussions and guiding our Scrum sessions, drawing on my experience directing film crews and running writers rooms. My technical contribution was
   primarily backend: I architected the vector database using PostgreSQL with pgvector extension and ivfflat indexing, designed the creative onboarding quiz
    (a Buzzfeed-style personality quiz and Tinder-style film swipe UI to cold-start a 384-dimensional user preference vector), and built the Spring Boot
-  REST API. The project uses HuggingFace NLP models for sentence embeddings, TMDB API for movie data, and Firebase Auth for security. I chose this project
+  REST API. The project uses HuggingFace NLP models for sentence embeddings, TMDB API for movie data, and Firebase Auth for security, protected by Spring Security and Firebase Admin SDK token verification. I led the team through the full SDLC, managing sprints via Jira and Scrum ceremonies with CI/CD deployment through Git. I chose this project
   because I wanted to learn about machine learning and AI, and I learn best by doing. When I discovered we did not have enough user data for true ML,
   instead of abandoning the approach, I reframed the goal and built an online learning system using weighted vector arithmetic that updates user
   preferences on every interaction. This moment of confronting a wrong assumption, updating the plan, and continuing is how real software development
@@ -156,7 +159,7 @@ public class RebecaKnowledgeBase {
 
                   WHY I WANT THE APPRENTICESHIP SPECIFICALLY
                   I want structured learning. The apprenticeships first year in the ICT learning environment is exactly what I am looking for — lectures,
-  labs, projects, group work, mentorship. This format mirrors the Java bootcamp at Maynooth, which was one of my favorite learning experiences (94.5%
+  labs, projects, group work, mentorship, and a buddy system. The buddy system particularly excites me — having a dedicated mentor to guide my growth in a structured environment is exactly how I learn best. This format mirrors the Java bootcamp at Maynooth, which was one of my favorite learning experiences (96.79%
   grade). I thrive in structured learning environments with mentors and professors. I also thrive in group project work because of my collaborative film
   background. I care deeply about building solid foundations and do not want to pick up bad habits. Google has a strong reputation for world-class
   training, and I trust that their training would encourage creativity, innovation, and excellence — values I share. My philosophy is: keep learning, go
@@ -170,9 +173,13 @@ public class RebecaKnowledgeBase {
    I bring a global mindset and cultural fluency. I practice CrossFit consistently, which has taught me discipline, mental endurance, and the satisfaction
   of tracking progress. I am a member of the Women in STEM and LGBTQ+ societies at Maynooth. I believe in innovation through kindness, with a
   people-centric approach. The joy of coding for me stems from breaking down complex concepts into their smallest parts and figuring out the most efficient
-   way to communicate them.
+   way to communicate them. I am particularly interested in Machine Learning, Large Reasoning Models, Agentic AI, and Storytelling.
+
+                  GROWTH AREAS AND SELF-AWARENESS
+                  I am early in my software engineering career and do not yet have years of experience working in production codebases or large-scale systems. I am honest about what I do not know. However, I compensate with exceptional speed of learning and genuine curiosity. Evidence: I scored 96.79% in an intensive three-week Java bootcamp, built CoverPage (a full-stack AI application) from scratch in four days, learned cloud deployment with zero prior experience, and taught myself Firebase authentication independently for the Flower Power project. When I encountered a gap in my Filmoji project (not enough data for true ML), I did not abandon the goal — I researched alternatives, reframed the approach, and built a working solution using vector arithmetic. I am deeply self-aware about my growth areas, and that self-awareness is exactly why I am drawn to structured learning environments like Google's apprenticeship. I would love to discuss my growth areas and learning approach further in person.
 
                   CONTACT
+                  Phone: 083 361 0449
                   Email: rebscastilho@gmail.com
                   GitHub: https://github.com/rcastilho97
                   LinkedIn: https://www.linkedin.com/in/rebeca-castilho/

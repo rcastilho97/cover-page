@@ -23,7 +23,8 @@
         <a class="nav-link" onclick="showSection('contact')">Contact</a>
         <a class="nav-link" href="https://github.com/rcastilho97" target="_blank">GitHub</a>
         <a class="nav-link" href="https://www.linkedin.com/in/rebeca-castilho/" target="_blank">LinkedIn</a>
-        <a class="nav-link cv" href="YOUR_CV_URL" target="_blank">CV</a>
+        <a class="nav-link cv" onclick="showSection('cv')">CV</a>
+        <a class="nav-link cv" onclick="showSection('cover-letter')">Cover Letter</a>
       </div>
     </nav>
 
@@ -111,17 +112,18 @@
       <div class="results-nav-right">
         <a class="nav-link" onclick="showSection('about')">About</a>
         <a class="nav-link" onclick="showSection('contact')">Contact</a>
-        <a class="nav-link cv" href="YOUR_CV_URL" target="_blank">CV</a>
+        <a class="nav-link cv" onclick="showSection('cv')">CV</a>
+        <a class="nav-link cv" onclick="showSection('cover-letter')">Cover Letter</a>
       </div>
     </nav>
 
     <!-- Results Tabs -->
     <div class="results-tabs">
       <div class="tab active">All</div>
-      <div class="tab">Experience</div>
-      <div class="tab">Projects</div>
-      <div class="tab">Skills</div>
-      <div class="tab">Contact</div>
+      <div class="tab" onclick="showSection('projects-coverpage')">Projects</div>
+      <div class="tab" onclick="showSection('education-maynooth')">Education</div>
+      <div class="tab" onclick="showSection('experience-vodafone')">Experience</div>
+      <div class="tab" onclick="showSection('why-google')">Why Google</div>
     </div>
 
     <!-- Results Body -->

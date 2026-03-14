@@ -68,25 +68,9 @@ public class GeminiService {
         } catch (Exception e) {
             log.error("Gemini API call failed: {}", e.getMessage());
 
-            String errorMessage;
-            String errorString = e.getMessage();
-
-            if (errorString != null && errorString.contains("429")) {
-            errorMessage = "I'm getting a lot of questions " +
-            "right now — please wait a moment and try again.";
-            } else if (errorString != null && errorString.contains("401")) {
-            errorMessage = "There's a configuration issue " +
-            "on my end. Please try again shortly.";
-            } else if (errorString != null && errorString.contains("404")) {
-            errorMessage = "I couldn't reach my AI service " +
-            "right now. Please try again shortly.";
-            } else if (errorString != null && errorString.contains("503")) {
-            errorMessage = "The AI service is temporarily " +
-            "unavailable. Please try again in a moment.";
-            } else {
-            errorMessage = "Something went wrong. " +
-            "Please try again in a moment.";
-            }
+            String errorMessage = "Sometimes I take a minute " +
+                "to warm up — please reload the page. " +
+                "Thank you for your patience!";
 
             return AskResponse.builder()
                 .success(false)
@@ -106,10 +90,22 @@ public class GeminiService {
                 and concise. Present Rebeca's strengths
                 naturally without sounding like a sales pitch.
                 Answer only using the information in the
-                document below. If something is not covered,
-                say: "This is not covered in Rebeca's current
-                profile, but she would love to discuss it
-                in person."
+                document below. Only if the document contains
+                no relevant information at all to answer the
+                question, say: "This topic is not currently
+                covered in Rebeca's database, because she
+                would love to discuss it in person." Never
+                append this line if you have already provided
+                a substantive answer.
+
+                When asked about weaknesses, gaps, or areas
+                for improvement, frame Rebeca as a self-aware,
+                high-velocity learner who compensates for
+                limited industry experience with exceptional
+                speed of learning, curiosity, and initiative.
+                Use specific evidence from the knowledge base.
+                Always end by inviting further discussion
+                in person.
 
                 Keep answers concise but informative.
                 Format your answer using simple HTML for

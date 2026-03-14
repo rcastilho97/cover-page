@@ -32,6 +32,40 @@ function relatedCard(key, iconSvg, colorClass, title, snippet) {
     </div>`;
 }
 
+// Category mini-nav helpers
+function categoryNav(items, activeKey) {
+  return `<div class="category-nav">` +
+    items.map(item =>
+      `<span class="category-nav-item${item.key === activeKey ? ' active' : ''}" onclick="showSection('${item.key}')">${item.label}</span>`
+    ).join('') + `</div>`;
+}
+
+const PROJECT_NAV = [
+  { key: 'projects-coverpage', label: 'CoverPage' },
+  { key: 'projects-filmoji', label: 'Filmoji' },
+  { key: 'projects-flowerpower', label: 'Flower Power' }
+];
+
+const EDUCATION_NAV = [
+  { key: 'education-maynooth', label: 'Maynooth' },
+  { key: 'education-fordham', label: 'Fordham' },
+  { key: 'education-sorbonne', label: 'Sorbonne' }
+];
+
+const WHY_NAV = [
+  { key: 'why-google', label: 'Why Google' },
+  { key: 'why-apprenticeship', label: 'Why Apprenticeship' },
+  { key: 'why-tech', label: 'Why Tech' }
+];
+
+const EXPERIENCE_NAV = [
+  { key: 'experience-vodafone', label: 'Vodafone' },
+  { key: 'experience-film', label: 'Film' },
+  { key: 'experience-story-analyst', label: 'Story Analyst' },
+  { key: 'experience-screenwriting', label: 'Screenwriting' },
+  { key: 'experience-internships', label: 'Internships' }
+];
+
 const sections = {
 
   // =============================================
@@ -147,6 +181,7 @@ const sections = {
           <span class="tag">Arri Alexa</span>
           <span class="tag">RED One</span>
         </div>
+        ${categoryNav(EXPERIENCE_NAV, 'experience-film')}
       </div>
 
       <h2>Camera Department</h2>
@@ -165,7 +200,7 @@ const sections = {
 
       <h2>Directing</h2>
       <p>
-        I wrote, produced, and directed <strong>The Art Thief</strong> — a crowdfunded irreverent
+        I wrote, produced, and directed <strong>The Art Thief</strong> — a <a class="cross-link" href="https://www.indiegogo.com/en/projects/rebecacastilho/the-art-thief-short-film" target="_blank">crowdfunded</a> irreverent
         De Stijl-style short film about the wild world of contemporary art (2018). I handled
         everything: budgeting, casting, drafting contracts, scouting locations, requesting permits,
         and directing actors. The Art Thief went on to win
@@ -217,6 +252,7 @@ const sections = {
           <span class="tag">Short Film</span>
           <span class="tag">Story Development</span>
         </div>
+        ${categoryNav(EXPERIENCE_NAV, 'experience-screenwriting')}
       </div>
 
       <h2>Original Work</h2>
@@ -278,6 +314,7 @@ const sections = {
           <span class="tag">Client Management</span>
           <span class="tag">Jan 2023 – Sept 2024</span>
         </div>
+        ${categoryNav(EXPERIENCE_NAV, 'experience-vodafone')}
       </div>
 
       <div class="stat-callout">
@@ -360,6 +397,7 @@ const sections = {
           <span class="tag">8 Genres</span>
           <span class="tag">Dec 2020 – Dec 2022</span>
         </div>
+        ${categoryNav(EXPERIENCE_NAV, 'experience-story-analyst')}
       </div>
 
       <div class="stat-callout">
@@ -428,6 +466,7 @@ const sections = {
           <span class="tag">New York City</span>
           <span class="tag">2018 – 2020</span>
         </div>
+        ${categoryNav(EXPERIENCE_NAV, 'experience-internships')}
       </div>
 
       <h2>Cinetic Media — Film Sales Development Intern</h2>
@@ -554,6 +593,7 @@ const sections = {
           <span class="tag">Firebase</span>
           <span class="tag">Cloud Run</span>
         </div>
+        ${categoryNav(PROJECT_NAV, 'projects-coverpage')}
       </div>
 
       <div class="stat-callout">
@@ -652,9 +692,13 @@ const sections = {
           <span class="tag">pgvector</span>
           <span class="tag">HuggingFace</span>
           <span class="tag">Firebase Auth</span>
+          <span class="tag">Spring Security</span>
           <span class="tag">TMDB API</span>
+          <span class="tag">Jira</span>
+          <span class="tag">CI/CD</span>
           <span class="tag">Scrum</span>
         </div>
+        ${categoryNav(PROJECT_NAV, 'projects-filmoji')}
       </div>
 
       <div class="stat-callout">
@@ -688,6 +732,8 @@ const sections = {
         <li>The <strong>vector database</strong> using PostgreSQL with pgvector extension and ivfflat indexing for fast cosine similarity search</li>
         <li>The <strong>creative onboarding flow</strong> — a Buzzfeed-style personality quiz and Tinder-style film swipe UI to cold-start a 384-dimensional user preference vector from zero data</li>
         <li>The <strong>Spring Boot REST API</strong> connecting all layers of the application</li>
+        <li>The <strong>security layer</strong> using Spring Security and Firebase Admin SDK for token verification</li>
+        <li><strong>Sprint management</strong> via Jira and Scrum ceremonies, with CI/CD deployment through Git</li>
         <li>An <strong>online learning system</strong> using weighted vector arithmetic that updates user preferences on every like/dislike interaction</li>
       </ul>
 
@@ -755,6 +801,7 @@ const sections = {
           <span class="tag">Behavioral Design</span>
           <span class="tag">3-Person Team</span>
         </div>
+        ${categoryNav(PROJECT_NAV, 'projects-flowerpower')}
       </div>
 
       <h2>What It Is</h2>
@@ -816,6 +863,8 @@ const sections = {
           <span class="tag">Firebase</span>
           <span class="tag">Docker</span>
           <span class="tag">GCP</span>
+          <span class="tag">TestNG</span>
+          <span class="tag">Selenium</span>
         </div>
       </div>
 
@@ -835,21 +884,43 @@ const sections = {
         <li><strong>JSON</strong> — data interchange and API response parsing</li>
       </ul>
 
-      <h2>Technical Systems</h2>
+      <h2>Frameworks & Tools</h2>
       <ul>
+        <li><strong>Spring Boot</strong> — REST API development and backend architecture</li>
+        <li><strong>React</strong> — component-based frontend development</li>
         <li><strong>RESTful APIs</strong> — design, implementation, and consumption</li>
-        <li><strong>CORS Configuration</strong> — cross-origin resource sharing setup</li>
-        <li><strong>Secret Management</strong> — secure API key handling</li>
-        <li><strong>CRUD Operations</strong> — full data lifecycle management</li>
+        <li><strong>Git</strong> — version control and collaborative workflows</li>
+        <li><strong>Docker</strong> — containerization for deployment</li>
+        <li><strong>Jira</strong> — sprint planning and Agile project management</li>
       </ul>
 
-      <h2>Cloud & Tools</h2>
+      <h2>Testing & Quality</h2>
+      <ul>
+        <li><strong>TestNG</strong> — Java software testing framework</li>
+        <li><strong>Selenium</strong> — automated browser testing</li>
+        <li><strong>Unit Testing</strong> — test-driven development practices</li>
+      </ul>
+
+      <h2>Cloud & Data</h2>
       <ul>
         <li><strong>Google Cloud Platform</strong> — Cloud Run, Cloud Build, Secret Manager</li>
         <li><strong>Firebase</strong> — Hosting, Authentication, Firestore</li>
-        <li><strong>Git</strong> — version control and collaborative workflows</li>
-        <li><strong>Docker</strong> — containerization for deployment</li>
+        <li><strong>PostgreSQL</strong> — relational databases and pgvector for vector embeddings</li>
         <li><strong>Supabase</strong> — open-source backend services</li>
+      </ul>
+
+      <h2>Practices</h2>
+      <ul>
+        <li><strong>Agile/Scrum</strong> — sprint ceremonies, standups, retrospectives</li>
+        <li><strong>CI/CD</strong> — continuous integration and deployment pipelines</li>
+      </ul>
+
+      <h2>Spoken Languages</h2>
+      <ul>
+        <li><strong>English</strong> — Fluent</li>
+        <li><strong>Portuguese</strong> — Native</li>
+        <li><strong>French</strong> — Conversational</li>
+        <li><strong>Spanish</strong> — Conversational</li>
       </ul>
 
       <h2>Soft Skills</h2>
@@ -901,6 +972,7 @@ const sections = {
           <span class="tag">Sept 2025 – Sept 2026</span>
           <span class="tag">Equivalent to 4-Year CS Degree</span>
         </div>
+        ${categoryNav(EDUCATION_NAV, 'education-maynooth')}
       </div>
 
       <div class="stat-callout">
@@ -909,13 +981,17 @@ const sections = {
           <div class="stat-label">Projected Grade</div>
         </div>
         <div class="stat">
-          <div class="stat-number">94.5%</div>
+          <div class="stat-number">96.79%</div>
           <div class="stat-label">Java Bootcamp</div>
         </div>
         <div class="stat">
           <div class="stat-number">10</div>
           <div class="stat-label">Core Modules</div>
         </div>
+        <a class="cv-download-btn stat-download" href="Rebeca Castilho - Maynooth University Transcript - Semester 1 - REDACTED ID.pdf" download>
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Transcript
+        </a>
       </div>
 
       <h2>The Program</h2>
@@ -941,7 +1017,7 @@ const sections = {
       <h2>The Java Bootcamp</h2>
       <p>
         The program started with a three-week intensive Java programming bootcamp covering
-        first-year undergraduate CS material. I achieved a final grade of <strong>94.5%</strong>.
+        first-year undergraduate CS material. I achieved a final grade of <strong>96.79%</strong>.
         The bootcamp is one of my favorite parts of the program because it was structured
         learning with lectures in the morning and labs in the afternoon to apply the knowledge
         — exactly the format the first year of the
@@ -987,6 +1063,7 @@ const sections = {
           <span class="tag">GPA 3.2/4.0</span>
           <span class="tag">Sept 2016 – May 2020</span>
         </div>
+        ${categoryNav(EDUCATION_NAV, 'education-fordham')}
       </div>
 
       <h2>The Degree</h2>
@@ -1013,7 +1090,7 @@ const sections = {
 
       <h2>Thesis — The Art Thief</h2>
       <p>
-        My senior thesis was <strong>The Art Thief</strong> — a crowdfunded irreverent De Stijl-style
+        My senior thesis was <strong>The Art Thief</strong> — a <a class="cross-link" href="https://www.indiegogo.com/en/projects/rebecacastilho/the-art-thief-short-film" target="_blank">crowdfunded</a> irreverent De Stijl-style
         short film about the wild world of contemporary art. I wrote, produced, directed, budgeted,
         cast, drafted contracts, scouted locations, and requested permits. It later won
         <a class="cross-link" onclick="showSection('awards')">Best Film at the West London Film Festival</a>.
@@ -1049,6 +1126,7 @@ const sections = {
           <span class="tag">GPA 3.25/4.0</span>
           <span class="tag">Jan – May 2019</span>
         </div>
+        ${categoryNav(EDUCATION_NAV, 'education-sorbonne')}
       </div>
 
       <h2>The Experience</h2>
@@ -1104,6 +1182,7 @@ const sections = {
           <span class="tag">Diversity</span>
           <span class="tag">Dream Company</span>
         </div>
+        ${categoryNav(WHY_NAV, 'why-google')}
       </div>
 
       <h2>Values That Resonate</h2>
@@ -1170,17 +1249,22 @@ const sections = {
           <span class="tag highlight">Structured Learning</span>
           <span class="tag highlight">ICT Environment</span>
           <span class="tag highlight">Mentorship</span>
+          <span class="tag">Buddy System</span>
           <span class="tag">World-Class Training</span>
           <span class="tag">Toolkit Philosophy</span>
         </div>
+        ${categoryNav(WHY_NAV, 'why-apprenticeship')}
       </div>
 
       <h2>I Want Structured Learning</h2>
       <p>
         The apprenticeship's first year in the ICT learning environment is exactly what I'm
-        looking for — lectures, labs, projects, group work, mentorship. This format mirrors
-        the Java bootcamp at <a class="cross-link" onclick="showSection('education-maynooth')">Maynooth</a>,
-        which was one of my favorite learning experiences (94.5% grade). I thrive in structured
+        looking for — lectures, labs, projects, group work, mentorship, and a
+        <strong>buddy system</strong>. The buddy system particularly excites me — having a
+        dedicated mentor to guide my growth in a structured environment is exactly how I learn
+        best. This format mirrors the Java bootcamp at
+        <a class="cross-link" onclick="showSection('education-maynooth')">Maynooth</a>,
+        which was one of my favorite learning experiences (96.79% grade). I thrive in structured
         learning environments with mentors and professors. I also thrive in group project work
         because of my
         <a class="cross-link" onclick="showSection('collaboration')">collaborative film background</a>.
@@ -1237,6 +1321,7 @@ const sections = {
           <span class="tag">Curiosity-Driven</span>
           <span class="tag">Lifelong Learner</span>
         </div>
+        ${categoryNav(WHY_NAV, 'why-tech')}
       </div>
 
       <h2>It Was Always There</h2>
@@ -1402,7 +1487,7 @@ const sections = {
 
       <h2>Academic</h2>
       <ul>
-        <li><strong>94.5%</strong> — Java Programming Bootcamp, <a class="cross-link" onclick="showSection('education-maynooth')">Maynooth University</a> (2025)</li>
+        <li><strong>96.79%</strong> — Java Programming Bootcamp, <a class="cross-link" onclick="showSection('education-maynooth')">Maynooth University</a> (2025)</li>
         <li><strong>A+</strong> — Film production module, <a class="cross-link" onclick="showSection('education-sorbonne')">Sorbonne University</a> (highest grade in the class)</li>
       </ul>
 
@@ -1411,7 +1496,7 @@ const sections = {
         <div class="related-cards">
           ${relatedCard('experience-film', ICONS.camera, 'rc-red', 'Film & Television Career', 'The productions behind the awards')}
           ${relatedCard('education-fordham', ICONS.graduation, 'rc-green', 'Fordham University', 'Where The Art Thief was born')}
-          ${relatedCard('education-maynooth', ICONS.graduation, 'rc-green', 'Maynooth University', 'Where the 94.5% Java grade happened')}
+          ${relatedCard('education-maynooth', ICONS.graduation, 'rc-green', 'Maynooth University', 'Where the 96.79% Java grade happened')}
         </div>
       </div>
     `
@@ -1538,8 +1623,8 @@ const sections = {
       <h2>Travel & Languages</h2>
       <p>
         Having lived in four countries, I have a deep appreciation for cultural exchange. I speak
-        Portuguese (native), English (fluent), and French (conversational). Each country has
-        shaped my perspective and made me more adaptable.
+        Portuguese (native), English (fluent), French (conversational), and Spanish (conversational).
+        Each country has shaped my perspective and made me more adaptable.
       </p>
 
       <div class="related-pages">
@@ -1569,6 +1654,8 @@ const sections = {
         <div class="section-tags">
           <span class="tag highlight">Machine Learning</span>
           <span class="tag highlight">AI</span>
+          <span class="tag highlight">Agentic AI</span>
+          <span class="tag">Large Reasoning Models</span>
           <span class="tag">Recommendation Algorithms</span>
           <span class="tag">Image Recognition</span>
           <span class="tag">Deep Neural Networks</span>
@@ -1590,6 +1677,16 @@ const sections = {
         behavior, collaborative filtering, and content-based approaches creates systems that
         feel almost magical when they work well. Building Filmoji's recommendation engine from
         scratch gave me a taste of this world, and I want to go deeper.
+      </p>
+
+      <h2>Agentic AI & Large Reasoning Models</h2>
+      <p>
+        I'm particularly interested in <strong>Agentic AI</strong> — autonomous systems that can
+        plan, reason, and take action across multiple steps. Combined with
+        <strong>Large Reasoning Models</strong>, this represents a shift from AI that responds
+        to AI that thinks and acts. Google's investment in reasoning models and new approaches
+        rather than just scaling existing ones is exactly the kind of forward-thinking
+        experimentation I want to be part of.
       </p>
 
       <h2>Image Recognition & Deep Neural Networks</h2>
@@ -1663,6 +1760,7 @@ const sections = {
 
       <h2>Get In Touch</h2>
       <ul>
+        <li><strong>Phone:</strong> 083 361 0449</li>
         <li><strong>Email:</strong> <a class="cross-link" href="mailto:rebscastilho@gmail.com">rebscastilho@gmail.com</a></li>
         <li><strong>GitHub:</strong> <a class="cross-link" href="https://github.com/rcastilho97" target="_blank">github.com/rcastilho97</a></li>
         <li><strong>LinkedIn:</strong> <a class="cross-link" href="https://www.linkedin.com/in/rebeca-castilho/" target="_blank">linkedin.com/in/rebeca-castilho</a></li>
@@ -1676,6 +1774,74 @@ const sections = {
           ${relatedCard('why-google', ICONS.heart, 'rc-blue', 'Why Google', 'Values, vision, and a personal dream')}
           ${relatedCard('projects-coverpage', ICONS.code, 'rc-green', 'CoverPage — This Application', 'How and why this was built')}
         </div>
+      </div>
+    `
+  },
+
+  // =============================================
+  // 24. CURRICULUM VITAE
+  // =============================================
+  cv: {
+    title: 'Curriculum Vitae',
+    meta: 'coverpage.rebeca.dev › cv',
+    content: `
+      <div class="section-header">
+        <div class="section-header-top">
+          <div class="section-header-icon sh-red">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM6 20V4h5v7h7v9H6z"/></svg>
+          </div>
+          <div class="cv-title-row">
+            <h1>Curriculum Vitae</h1>
+            <a class="cv-download-btn" href="Rebeca Castilho - CV - Google Software Development Apprenticeship.pdf" download>
+              <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
+        <p class="section-meta">coverpage.rebeca.dev › cv</p>
+        <div class="section-tags">
+          <span class="tag highlight">Software Engineering</span>
+          <span class="tag highlight">Google Apprenticeship</span>
+          <span class="tag">Dublin, Ireland</span>
+        </div>
+      </div>
+
+      <div class="cv-embed-wrap">
+        <iframe src="Rebeca Castilho - CV - Google Software Development Apprenticeship.pdf"></iframe>
+      </div>
+    `
+  },
+
+  // =============================================
+  // 25. COVER LETTER
+  // =============================================
+  'cover-letter': {
+    title: 'Cover Letter',
+    meta: 'coverpage.rebeca.dev › cover-letter',
+    content: `
+      <div class="section-header">
+        <div class="section-header-top">
+          <div class="section-header-icon sh-red">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM6 20V4h5v7h7v9H6z"/></svg>
+          </div>
+          <div class="cv-title-row">
+            <h1>Cover Letter</h1>
+            <a class="cv-download-btn" href="Rebeca Castilho - Cover Letter - Google Software Development Apprenticeship.pdf" download>
+              <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
+        <p class="section-meta">coverpage.rebeca.dev › cover-letter</p>
+        <div class="section-tags">
+          <span class="tag highlight">Software Engineering</span>
+          <span class="tag highlight">Google Apprenticeship</span>
+          <span class="tag">Dublin, Ireland</span>
+        </div>
+      </div>
+
+      <div class="cv-embed-wrap">
+        <iframe src="Rebeca Castilho - Cover Letter - Google Software Development Apprenticeship.pdf"></iframe>
       </div>
     `
   }

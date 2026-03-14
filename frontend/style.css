@@ -945,6 +945,38 @@ button {
   color: #70757a;
 }
 
+/* Category mini-nav chips */
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 8px;
+}
+
+.category-nav-item {
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  color: #5f6368;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.category-nav-item:hover {
+  background: #f8f9fa;
+  border-color: #d2d2d2;
+}
+
+.category-nav-item.active {
+  background: #e8f0fe;
+  border-color: #d2e3fc;
+  color: #1a73e8;
+  font-weight: 500;
+}
+
 /* =============================================
    15. AUTOCOMPLETE DROPDOWN
    ============================================= */
@@ -1004,4 +1036,236 @@ button {
 /* When search bar has active dropdown — square bottom corners */
 .search-bar:focus-within {
   border-radius: 24px 24px 0 0;
+}
+
+/* =============================================
+   RESPONSIVE — Mobile (max-width: 768px)
+   Only affects screens 768px and below.
+   Desktop styles are completely unchanged.
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Homepage logo */
+  .logo {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+  /* Homepage search bar */
+  .search-wrap {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* Homepage hero */
+  .hero {
+    padding-bottom: 60px;
+  }
+
+  /* Homepage nav */
+  .nav {
+    padding: 10px 12px;
+  }
+
+  .nav-tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  /* Homepage buttons */
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Results page nav */
+  .results-nav {
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .results-nav-left {
+    gap: 10px;
+  }
+
+  .logo-small {
+    font-size: 20px;
+  }
+
+  .results-search-bar {
+    max-width: 100%;
+  }
+
+  .results-nav-right {
+    display: none;
+  }
+
+  /* Results tabs */
+  .results-tabs {
+    padding: 0 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Results body */
+  .results-body {
+    padding: 16px 12px 40px;
+  }
+
+  .results-main {
+    max-width: 100%;
+  }
+
+  /* AI overview */
+  .ai-overview {
+    margin-bottom: 20px;
+  }
+
+  /* Section pages */
+  .section-nav {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .section-body {
+    padding: 24px 16px 60px;
+  }
+
+  .section-header h1 {
+    font-size: 22px;
+  }
+
+  .section-header-top {
+    gap: 10px;
+  }
+
+  .section-header-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .section-header-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  /* Stat callout — stack on mobile */
+  .stat-callout {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 16px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  /* Category nav chips — scroll horizontally */
+  .category-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-nav-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Tags — scroll horizontally */
+  .section-tags {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tag {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 12px 16px;
+  }
+
+  /* CV page mobile */
+  .cv-title-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  .cv-embed-wrap iframe {
+    height: 60vh;
+  }
+}
+
+/* ======================== */
+/* CV PAGE                  */
+/* ======================== */
+.cv-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cv-title-row h1 {
+  min-width: 0;
+}
+
+.stat-download {
+  align-self: center;
+  margin-left: auto;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 11px;
+  border-radius: 20px;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Google Sans', 'Roboto', sans-serif;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.cv-download-btn:hover {
+  background: #1557b0;
+  box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+}
+
+.cv-download-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+}
+
+.cv-embed-wrap {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.cv-embed-wrap iframe {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  display: block;
 }
